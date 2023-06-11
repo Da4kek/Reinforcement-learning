@@ -11,12 +11,12 @@ class Discrete():
         self.action_size = self.env.action_space.n
         self.state_size = self.env.observation_space.n
     
-    def q_table(self,action_size,state_size):
+    def q_table(self,state_size,action_size):
         qtable = np.zeros([state_size,action_size])
         return qtable
     
     def fit(self,epochs,learning_rate,gamma,epsilon,decay_rate,min_epsilon,max_epsilon):
-        q_table = self.q_table(self.action_size,self.state_size)
+        q_table = self.q_table(self.state_size,self.action_size)
         for epoch in range(epochs):
             discrete_state = self.env.reset()
             done = False
@@ -38,7 +38,7 @@ class Discrete():
         state = self.env.reset()
         for _ in range(size): 
             self.env.render()
-            action = np.argmax(self.q_table(self.action_size,self.state_size)[state])
+            action = np.argmax(self.q_table(self.state_size,self.action_size)[state])
             state,reward,done,info = self.env.step(action)
             time.sleep(1)
             if visualize:
