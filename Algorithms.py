@@ -23,11 +23,14 @@ class Discrete():
             while not done:
                 action = epselection(epsilon,q_table,discrete_state,self.env)
                 new_state,reward,done,info = self.env.step(action)
-                new_discrete_state = new_state
                 old_q_value = q_table[discrete_state,action]
-                next_optimal_q = np.max(q_table[new_discrete_state,:])
-                q_table[discrete_state,action] = computeQ(old_q_value,reward,next_optimal_q,learning_rate,gamma)
-                discrete_state = new_discrete_state
+                next_optimal_q = np.max(q_table[new_state,:])
+
+                next_q = computeQ(old_q_value,reward,next_optimal_q,learning_rate,gamma)
+
+                q_table[discrete_state,action] = next_q
+                discrete_state = new_state
+            epoch +=1
             epsilon = reduce_epsilon(epsilon,epoch,min_epsilon,max_epsilon,decay_rate)
         return q_table
 
