@@ -9,7 +9,7 @@ class Discrete():
     def __init__(self,env):
         self.env = env
         self.action_size = self.env.action_space.n
-        self.state_size = self.env.observation_space.shape[0]
+        self.state_size = self.env.observation_space.shape
     
     def q_table(self,action_size,state_size):
         qtable = np.zeros([state_size,action_size])
