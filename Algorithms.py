@@ -47,4 +47,3 @@ class Discrete():
                 break 
         self.env.close()
         return reward,info
-    
