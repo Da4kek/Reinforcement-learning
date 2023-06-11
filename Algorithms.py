@@ -8,7 +8,7 @@ from utils.show_state import show_state
 class Discrete():
     def __init__(self,env):
         self.action_size = env.action_space.n
-        self.state_size = env.observation_space.n
+        self.state_size = env.observation_space.shape
         self.env = env
     
     def q_table(self):
