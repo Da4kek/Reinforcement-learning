@@ -1,11 +1,9 @@
-from common.Register import Make_env  
-import gym 
 import time 
 import numpy as np
 from utils.epsilon_selection import epselection
 from utils.reduce_epsilon import reduce_epsilon
-from utills.q_selection import computeQ
-from utility.show_state import show_state
+from utils.q_selection import computeQ
+from utils.show_state import show_state
 
 class Discrete():
     def __init__(self,env):
