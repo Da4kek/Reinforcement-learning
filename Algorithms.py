@@ -9,7 +9,7 @@ class Discrete():
     def __init__(self,env):
         self.env = env
         self.action_size = self.env.action_space.n
-        self.state_size = self.env.observation_space.shape
+        self.state_size = self.env.observation_space.n
     
     def q_table(self,action_size,state_size):
         qtable = np.zeros([state_size,action_size])
@@ -36,7 +36,7 @@ class Discrete():
 
     def evaluate(self,size,visualize:bool=False):
         state = self.env.reset()
-        for _ in range(size):
+        for _ in range(size): 
             self.env.render()
             action = np.argmax(self.q_table()[state])
             state,reward,done,info = self.env.step(action)
