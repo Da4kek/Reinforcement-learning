@@ -8,13 +8,15 @@ from utils.show_state import show_state
 class Discrete():
     def __init__(self,env):
         self.env = env
+        self.action_size = self.env.action_space.n
+        self.state_size = self.env.observation_space[0]
     
     def q_table(self,action_size,state_size):
         qtable = np.zeros([state_size,action_size])
         return qtable
     
     def fit(self,epochs,learning_rate,gamma,epsilon,decay_rate,min_epsilon,max_epsilon):
-        q_table = self.q_table()
+        q_table = self.q_table(self.action_size,self.state_size)
         for epoch in range(epochs):
             discrete_state = self.env.reset()
             done = False
