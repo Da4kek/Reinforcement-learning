@@ -38,7 +38,7 @@ class Discrete():
         state = self.env.reset()
         for _ in range(size): 
             self.env.render()
-            action = np.argmax(self.q_table()[state])
+            action = np.argmax(self.q_table(self.action_size,self.state_size)[state])
             state,reward,done,info = self.env.step(action)
             time.sleep(1)
             if visualize:
