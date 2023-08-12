@@ -26,4 +26,5 @@ On the other hand, model-free algorithms seek to learn the consequences of their
 Among RL's model-free methods is temporal difference (TD) learning, with SARSA and Q-learning being two of the most used algorithms.
 
 ### Temporal Difference Learning:
-One of the problems with the environment is that rewards usually are not immediately observable. TD learning is an unsupervised technique to predict a variable's expected value in a sequence of states. TD uses a mathematical trick to replace complex reasoning about the future with a simple learning procedure that can produce the same results.
+One of the problems with the environment is that rewards usually are not immediately observable. TD learning is an unsupervised technique to predict a variable's expected value in a sequence of states. TD uses a mathematical trick to replace complex reasoning about the future with a simple learning procedure that can produce the same results. Instead of calculating the total future reward, TD tries to predict the combination of immediate reward and its own reward prediction at the next moment in time.  
+TD error is the difference between the ultimate correct reward and our current prediction. As similar to other optimization methods, the current value will be updated by its value + learning_rate * error.
