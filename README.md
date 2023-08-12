@@ -20,3 +20,10 @@ The Q-learning algorithm is adapted from the Q-value iteration algorithm, in a s
 Model-based, as it sounds, has an agent trying to understand its environment and creating a model for it based on its interactions with this environment. In such a system, preferences take priority over the consequences of the actions. The agent is more concerned about the rewards it gets from the environment than the environment itself.
 
 On the other hand, model-free algorithms seek to learn the consequences of their actions through experience via algorithms such as Policy Gradient, Q-learning etc. In other words, such algorithms will carry out an action multiple times and will adjust the policy based on the outcomes.
+
+## Reinforcement learning algorithms:
+
+Among RL's model-free methods is temporal difference (TD) learning, with SARSA and Q-learning being two of the most used algorithms.
+
+### Temporal Difference Learning:
+One of the problems with the environment is that rewards usually are not immediately observable. TD learning is an unsupervised technique to predict a variable's expected value in a sequence of states. TD uses a mathematical trick to replace complex reasoning about the future with a simple learning procedure that can produce the same results.
