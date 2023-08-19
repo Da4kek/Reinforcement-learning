@@ -28,3 +28,12 @@ Among RL's model-free methods is temporal difference (TD) learning, with SARSA a
 ### Temporal Difference Learning:
 One of the problems with the environment is that rewards usually are not immediately observable. TD learning is an unsupervised technique to predict a variable's expected value in a sequence of states. TD uses a mathematical trick to replace complex reasoning about the future with a simple learning procedure that can produce the same results. Instead of calculating the total future reward, TD tries to predict the combination of immediate reward and its own reward prediction at the next moment in time.  
 TD error is the difference between the ultimate correct reward and our current prediction. As similar to other optimization methods, the current value will be updated by its value + learning_rate * error.
+
+
+
+## Inverse Reinforcement Learning:
+Inverse reinforcement learning is a lately advanced machine laerning framework which could resolve the inverse conflict of reinforcement learning. Basically IRL is about studying from humans. 
+IRL is the sphere of studying an agent's objectives, values or rewards with the aid of using insights of its behavior.
+
+IRL reverses the problem in RL and instead tries to extract the reward function from an agent's observed behavior.  
+Andrew NG and Russell forumlated the IRL as an optimization problem. We want to select a reward feature for which the given Expert policy is optimal. However, given this limitation, we would also like to select a reward feature that further maximizes certain important properties.
